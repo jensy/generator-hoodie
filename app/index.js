@@ -25,16 +25,22 @@ HoodieGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'projectName',
     message: 'What is the name of your hoodie?'
+  },
+  // Compass prompt
+  {
+    type: 'confirm',
+    name: 'compass',
+    message: 'Would you like to add Compass to your project?',
+    default: true
   }];
 
   this.prompt(prompts, function (props) {
     this.projectName = props.projectName;
+    this.compass = props.compass;
 
     cb();
   }.bind(this));
 };
-
-// add Compass prompt
 
 HoodieGenerator.prototype.createFolders = function createFolders() {
   this.mkdir('app');
@@ -44,6 +50,7 @@ HoodieGenerator.prototype.createFolders = function createFolders() {
   this.mkdir('app/images');
   this.mkdir('app/scripts');
   this.mkdir('app/styles');
+  this.mkdir('app/styles/sass');
 };
 
 HoodieGenerator.prototype.createFiles = function createFiles() {

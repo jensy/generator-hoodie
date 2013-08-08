@@ -23,21 +23,12 @@ describe('hoodie generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig',
-      '.gitignore',
-      '.bowerrc',
-      'bower.json',
-      'package.json',
-      'Gruntfile.js',
-      'app/styles/main.styl',
-      'app/scripts/main.js',
-      'app/scripts/hoodie.js',
-      'app/jade/layouts/_default.jade',
-      'app/jade/index.jade'
+      '.editorconfig'
     ];
 
     helpers.mockPrompt(this.app, {
-      'projectName': 'Test'
+      'someOption': 'Y',
+      'compass': 'Y'
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
