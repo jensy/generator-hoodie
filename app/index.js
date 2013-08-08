@@ -34,6 +34,8 @@ HoodieGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
+// add Compass prompt
+
 HoodieGenerator.prototype.createFolders = function createFolders() {
   this.mkdir('app');
   this.mkdir('app/jade');
